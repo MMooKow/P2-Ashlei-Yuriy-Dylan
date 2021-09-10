@@ -1,5 +1,7 @@
 # P2-Ashlei-Yuriy-Dylan
-## P2 for building Revature Mingle [Working title] project will be written c# using the ASP.NET CORE framework with WebAPI functionality, Microsoft Entityframework, and front-end in Angular-JS. The CI pipeline and project board for this project will be handled by Azure DevOps. SonarCloud is used for quality control on code throughout the project.
+## P2 for building Revature Mingle [Working title] 
+- project will be written c# using the ASP.NET CORE framework with WebAPI functionality, Microsoft Entityframework, and front-end in Angular-JS. 
+- The CI pipeline and project board for this project will be handled by Azure DevOps. SonarCloud is used for quality control on code throughout the project.
 
 # Primary features (Not final)
 - User account and login features
@@ -9,15 +11,21 @@
 -             change account details
 -             delete account
 -             send request for contact
-
+- Climate table for climate options. Possibly linked to a travel destinations table later
+- Food/Cusine preference table. Also possibly can be linked to travel location later.
+- User Preferences table
+- User Accounts likely set up through Asp Identity
+- Messages table
+- Interested in Users (Like) table for storing a users favorite candidates
 
 
 ## Stretch goals
-- Ability to purchase gifts?
-- Find a match?
+- Ability to purchase gifts
+- Find a match
+- Travel destinations
 
 
-## ER Diagram 1st Draft
+## ER Diagram 2nd Draft
 ![ER Diagram 1st Draft](https://github.com/210726-wvu-net-ext/P2-Ashlei-Yuriy-Dylan/blob/main/P2_ERD%20(1).png)
 
 
