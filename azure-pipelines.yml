@@ -1,0 +1,82 @@
+trigger:
+  branches:
+    include:
+    - main
+  paths:
+    include:
+    - P2-Ashlei-Yuriy-Dylan
+   
+pr:
+  branches:
+    include:
+    - main
+  paths:
+    include:
+    - P2-Ashlei-Yuriy-Dylan
+
+variables:
+  slnPath: P2-Ashlei-Yuriy-Dylan
+
+stages:
+- stage: build
+  jobs:
+  - job: build
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+    # not always a good idea to take for granted
+    # the version of build dependencies installed on
+    # microsoft's build agents
+    - task: UseDotNet@2
+      displayName: dotnet sdk 5
+      inputs:
+        packageType: 'sdk'
+        version: '5.x'
+     # added because of an issue that might come up. **include***
+    - task: UseDotNet@2
+      displayName: dotnet runtime 3.1
+      inputs:
+        packageType: 'runtime'
+        version: '3.1.x'
+# Get this info from sonar cloud  https://sonarcloud.io/project/configuration?id=MMooKow_Revature-Project1
+    - task: SonarCloudPrepare@1
+      displayName: sonar prepare
+      inputs:
+      #SonarCloud value set to Pipeline token name for sonar key
+        SonarCloud: 'Group4_P2_Sonar'
+        organization: '210726-wvu-net-ext'
+        scannerMode: 'MSBuild'
+        projectKey: '210726-wvu-net-ext_P2-Ashlei-Yuriy-Dylan'
+        extraProperties: |
+          sonar.exclusions=**/lib/**/*
+          sonar.cs.opencover.reportsPaths=$(Agent.TempDirectory)/*/coverage.opencover.xml
+    - script: dotnet build --configuration Release
+      displayName: dotnet build
+      workingDirectory: $(slnPath)
+#xPlat because MS code coverage tool not good. included in xunit. Make sure to check output file type opencover in this case is all thats needed
+    - script: dotnet test
+        --configuration Release
+        --collect:"XPlat Code Coverage"
+        --results-directory $(Agent.TempDirectory)
+        --
+        DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
+      displayName: dotnet test
+      workingDirectory: $(slnPath)
+
+    - task: SonarCloudAnalyze@1
+      displayName: sonar analyze
+
+    - task: SonarCloudPublish@1
+      displayName: sonar publish gate
+      inputs:
+        pollingTimeoutSec: '300'
+# Get output info from MS default output location preferences. 
+    - script: dotnet publish
+        --configuration Release
+        --output $(Build.StagingDirectory)
+      displayName: dotnet publish
+      workingDirectory: $(slnPath)
+# publishing artifact
+    - publish: $(Build.StagingDirectory)
+      displayName: publish app artifact
+      artifact: app
