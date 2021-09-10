@@ -15,7 +15,7 @@ pr:
     - RevatureMingle.WebApi
 
 variables:
-  slnPath: P2-Ashlei-Yuriy-Dylan
+  slnPath: RevatureMingle.WebApi
 
 stages:
 - stage: build
