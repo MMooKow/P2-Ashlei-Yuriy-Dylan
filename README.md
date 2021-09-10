@@ -18,7 +18,7 @@
 
 
 ## ER Diagram 1st Draft
-![ER Diagram 1st Draft](https://github.com/210726-wvu-net-ext/P2-Ashlei-Yuriy-Dylan/blob/main/image_2021-09-10_161020.png)
+![ER Diagram 1st Draft](https://github.com/210726-wvu-net-ext/P2-Ashlei-Yuriy-Dylan/blob/main/P2_ERD%20(1).png)
 
 
 
