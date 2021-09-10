@@ -1,7 +1,8 @@
 # P2-Ashlei-Yuriy-Dylan
 ## P2 for building Revature Mingle [Working title] 
-- project will be written c# using the ASP.NET CORE framework with WebAPI functionality, Microsoft Entityframework, and front-end in Angular-JS. 
+- Project will be written C# using the ASP.NET CORE framework with WebAPI functionality, Microsoft Entityframework, and front-end in Angular-JS. 
 - The CI pipeline and project board for this project will be handled by Azure DevOps. SonarCloud is used for quality control on code throughout the project.
+- Database functionality is provided by Microsoft Azure SqlServer
 
 # Primary features (Not final)
 - User account and login features
