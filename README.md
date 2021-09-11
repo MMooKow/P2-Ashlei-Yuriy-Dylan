@@ -1,35 +1,34 @@
-# P2-Ashlei-Yuriy-Dylan
-## P2 for building Revature Mingle [Working title] 
-- Project will be written C# using the ASP.NET CORE framework with WebAPI functionality, Microsoft Entityframework, and front-end in Angular-JS. 
-- The CI pipeline and project board for this project will be handled by Azure DevOps. SonarCloud is used for quality control on code throughout the project.
-- Database functionality is provided by Microsoft Azure SqlServer
+# Vehicles N' Parts
+### Developers : Ashlie Nguyen, Yuriy Yartskiyy, Dylan Restivo
 
-# Primary features (Not final)
-- User account and login features
-- Ability to message users
--             search users
--             block users
--             change account details
--             delete account
--             send request for contact
-- Climate table for climate options. Possibly linked to a travel destinations table later
-- Food/Cusine preference table. Also possibly can be linked to travel location later.
-- User Preferences table
-- User Accounts likely set up through Asp Identity
-- Messages table
-- Interested in Users (Like) table for storing a users favorite candidates
+Vehicles N' Parts is a store for customers to review product inventory, purchase history, and buy vehicles and parts. Employees can use website to monitor inventory and process orders.
 
 
-## Stretch goals
-- Ability to purchase gifts
-- Find a match
-- Travel destinations
+## Tech-Stack
+- C# ASP.NET WEB API
+- .Net EF Core
+- Angular
+- SQL server
 
 
-## ER Diagram 2nd Draft
-![ER Diagram 1st Draft](https://github.com/210726-wvu-net-ext/P2-Ashlei-Yuriy-Dylan/blob/main/P2_ERD%20(1).png)
+## MVP
+- Product catalog page with search option for different products
+- User log in process
+- Database of products with prices, stocking level, condition, and location information
+- Users may add to cart, remove, or purchase products from cart
+- Order History page to view order history and review purchased products
+- Ability for users to message store support line
+- Admin's ability to apply **CRUD** operations on products and users
+- Admin Control Panel to monitor product stocking levels, sitewide purchase history, and manage individual orders
 
 
+## Stretch Goals
+- Sales ads for vechicles based on date-time
+- Location-based searching
+
+
+## Database Structure
+![Lucid Chart](https://i.imgur.com/a/tdLY94v.png)
 
 
 Useful links:
