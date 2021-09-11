@@ -17,12 +17,12 @@ Vehicles N' Parts is a store for customers to review product inventory, purchase
 - Database of products with prices, stocking level, condition, and location information
 - Users may add to cart, remove, or purchase products from cart
 - Order History page to view order history and review purchased products
-- Ability for users to message store support line
 - Admin's ability to apply **CRUD** operations on products and users
 - Admin Control Panel to monitor product stocking levels, sitewide purchase history, and manage individual orders
 
 
 ## Stretch Goals
+- Ability for users to message store support line
 - Sales ads for vechicles based on date-time
 - Location-based searching
 
@@ -31,7 +31,7 @@ Vehicles N' Parts is a store for customers to review product inventory, purchase
 Lucid Chart
 https://lucid.app/lucidchart/391bd5c4-8a9f-42d2-b4d0-31d029904859/edit?shared=true&page=0_0#
 Imgur
-https://i.imgur.com/a/tdLY94v.png
+https://i.imgur.com/a/zpY6CHN.png
 
 
 Useful links:
