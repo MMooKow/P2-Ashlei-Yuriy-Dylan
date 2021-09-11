@@ -28,7 +28,10 @@ Vehicles N' Parts is a store for customers to review product inventory, purchase
 
 
 ## Database Structure
-![Lucid Chart](https://i.imgur.com/a/tdLY94v.png)
+Lucid Chart
+https://lucid.app/lucidchart/391bd5c4-8a9f-42d2-b4d0-31d029904859/edit?shared=true&page=0_0#
+Imgur
+https://i.imgur.com/a/tdLY94v.png
 
 
 Useful links:
