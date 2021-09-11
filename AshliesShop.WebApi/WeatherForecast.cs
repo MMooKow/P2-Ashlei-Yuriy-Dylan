@@ -1,6 +1,6 @@
 using System;
 
-namespace RevatureMingle.WebApi
+namespace AshliesShop.WebApi
 {
     public class WeatherForecast
     {
