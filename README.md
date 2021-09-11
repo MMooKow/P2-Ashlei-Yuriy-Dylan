@@ -1,7 +1,7 @@
-# Vehicles N' Parts
+# Vehicles.com
 ### Developers : Ashlie Nguyen, Yuriy Yartskiyy, Dylan Restivo
 
-Vehicles N' Parts is a store for customers to review product inventory, purchase history, and buy vehicles and parts. Employees can use website to monitor inventory and process orders.
+Vehicles.com is a store for customers to review product inventory, purchase history, and buy vehicles and parts. Employees can use website to monitor inventory and process orders.
 
 
 ## Tech-Stack
