@@ -12,7 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 
-namespace RevatureMingle.WebApi
+namespace AshliesShop.WebApi
 {
     public class Startup
     {
@@ -30,7 +30,7 @@ namespace RevatureMingle.WebApi
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "RevatureMingle.WebApi", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "AshliesShop.WebApi", Version = "v1" });
             });
         }
 
@@ -41,7 +41,7 @@ namespace RevatureMingle.WebApi
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "RevatureMingle.WebApi v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "AshliesShop.WebApi v1"));
             }
 
             app.UseHttpsRedirection();

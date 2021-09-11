@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace RevatureMingle.WebApi.Controllers
+namespace AshliesShop.WebApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]

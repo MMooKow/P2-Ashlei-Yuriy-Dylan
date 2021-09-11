@@ -4,8 +4,8 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:26475",
-      "sslPort": 44311
+      "applicationUrl": "http://localhost:54747",
+      "sslPort": 44328
     }
   },
   "profiles": {
@@ -17,10 +17,10 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "RevatureMingle.WebApi": {
+    "AshliesShop.WebApi": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
-      "launchBrowser": false,
+      "launchBrowser": true,
       "launchUrl": "swagger",
       "applicationUrl": "https://localhost:5001;http://localhost:5000",
       "environmentVariables": {
