@@ -4,7 +4,7 @@ trigger:
     - main
   paths:
     include:
-    - RevatureMingle.WebApi
+    - API
    
 pr:
   branches:
@@ -12,10 +12,10 @@ pr:
     - main
   paths:
     include:
-    - RevatureMingle.WebApi
+    - API
 
 variables:
-  slnPath: RevatureMingle.WebApi
+  slnPath: API
 
 stages:
 - stage: build
