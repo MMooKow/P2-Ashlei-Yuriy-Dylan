@@ -1,6 +1,6 @@
 using System;
 
-namespace AshliesShop.WebApi
+namespace API
 {
     public class WeatherForecast
     {

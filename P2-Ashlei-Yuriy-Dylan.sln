@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AshliesShop.WebApi", "AshliesShop.WebApi\AshliesShop.WebApi.csproj", "{A26C6A70-4C51-496A-A7B8-E94CDB074B23}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{FDA898D2-6EB0-459F-87C5-C773904CB981}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,17 +18,17 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A26C6A70-4C51-496A-A7B8-E94CDB074B23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A26C6A70-4C51-496A-A7B8-E94CDB074B23}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A26C6A70-4C51-496A-A7B8-E94CDB074B23}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{A26C6A70-4C51-496A-A7B8-E94CDB074B23}.Debug|x64.Build.0 = Debug|Any CPU
-		{A26C6A70-4C51-496A-A7B8-E94CDB074B23}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{A26C6A70-4C51-496A-A7B8-E94CDB074B23}.Debug|x86.Build.0 = Debug|Any CPU
-		{A26C6A70-4C51-496A-A7B8-E94CDB074B23}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A26C6A70-4C51-496A-A7B8-E94CDB074B23}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A26C6A70-4C51-496A-A7B8-E94CDB074B23}.Release|x64.ActiveCfg = Release|Any CPU
-		{A26C6A70-4C51-496A-A7B8-E94CDB074B23}.Release|x64.Build.0 = Release|Any CPU
-		{A26C6A70-4C51-496A-A7B8-E94CDB074B23}.Release|x86.ActiveCfg = Release|Any CPU
-		{A26C6A70-4C51-496A-A7B8-E94CDB074B23}.Release|x86.Build.0 = Release|Any CPU
+		{FDA898D2-6EB0-459F-87C5-C773904CB981}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDA898D2-6EB0-459F-87C5-C773904CB981}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDA898D2-6EB0-459F-87C5-C773904CB981}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{FDA898D2-6EB0-459F-87C5-C773904CB981}.Debug|x64.Build.0 = Debug|Any CPU
+		{FDA898D2-6EB0-459F-87C5-C773904CB981}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FDA898D2-6EB0-459F-87C5-C773904CB981}.Debug|x86.Build.0 = Debug|Any CPU
+		{FDA898D2-6EB0-459F-87C5-C773904CB981}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDA898D2-6EB0-459F-87C5-C773904CB981}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDA898D2-6EB0-459F-87C5-C773904CB981}.Release|x64.ActiveCfg = Release|Any CPU
+		{FDA898D2-6EB0-459F-87C5-C773904CB981}.Release|x64.Build.0 = Release|Any CPU
+		{FDA898D2-6EB0-459F-87C5-C773904CB981}.Release|x86.ActiveCfg = Release|Any CPU
+		{FDA898D2-6EB0-459F-87C5-C773904CB981}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
