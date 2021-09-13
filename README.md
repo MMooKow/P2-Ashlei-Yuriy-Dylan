@@ -2,7 +2,7 @@
 
 
 ## Technology
-This project will be made using C# along with Asp.Net Core to create the web api functionality.The front end of this webapp will be made in Angular-JS. Our data will be stored using Azure Sql Server and hosted on Azure App Service. Automated testing will be done using Azure Pipelines and SonarCloud.
+This project will be made using C# along with Asp.Net Core to create the web api functionality.The front end of this webapp will be made in Angular-JS. Our data will be stored using Azure Sql Server and hosted on Azure App Service. Automated testing will be done using Azure Pipelines and SonarCloud. Entityframework is used as an ORM.
 
 
 ## Features
