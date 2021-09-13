@@ -1,24 +1,18 @@
-# Vehicles.com
-### Developers : Ashlie Nguyen, Yuriy Yartskiyy, Dylan Restivo
-
-Vehicles.com is a store for customers to review product inventory, purchase history, and buy vehicles and parts. Employees can use website to monitor inventory and process orders.
+# Vehicles.com is a store for customers to review product inventory, purchase history, and buy vehicles and parts. Employees can use website to monitor inventory and process orders.
 
 
-## Tech-Stack
-- C# ASP.NET WEB API
-- .Net EF Core
-- Angular
-- SQL server
+## Technology
+This project will be made using C# along with Asp.Net Core to create the web api functionality.The front end of this webapp will be made in Angular-JS. Our data will be stored using Azure Sql Server and hosted on Azure App Service. Automated testing will be done using Azure Pipelines and SonarCloud.
 
 
-## MVP
+## Features
 - Product catalog page with search option for different products
 - User log in process
 - Database of products with prices, stocking level, condition, and location information
 - Users may add to cart, remove, or purchase products from cart
 - Order History page to view order history and review purchased products
-- Admin's ability to apply **CRUD** operations on products and users
-- Admin Control Panel to monitor product stocking levels, sitewide purchase history, and manage individual orders
+- Employees will have the ability to access administrative features to assist customers.
+- Employees will have ability (perhaps based off roles) to see more detailed information about current stock levels and modify prices based off of demand.
 
 
 ## Stretch Goals
