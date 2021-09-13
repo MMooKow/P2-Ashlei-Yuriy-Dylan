@@ -1,4 +1,10 @@
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using API.Data;
+using Infrastructure.Data;
+using Core.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
@@ -6,18 +12,24 @@ namespace API.Controllers
     [Route("api/[controller]")]
     public class ProductsController : ControllerBase
     {
-        [HttpGet]
-        public string GetProducts()
+        private readonly StoreContext _context;
+        public ProductsController(StoreContext context)
         {
-            return "should return a product list";
+            _context = context;
+        }
+        [HttpGet]
+        public async Task<ActionResult<List<Product>>> GetProducts()
+        {
+            var products = _context.Products.ToListAsync();
+            return Ok(products);
         }
 
 
         //way to get single product
         [Microsoft.AspNetCore.Mvc.HttpGet("{id}")]
-        public string GetProduct(int id)
+        public async Task<ActionResult<Product>> GetProduct(int id)
         {
-            return "single product";
+            return await _context.Products.FindAsync(id);
         }
         
     }
