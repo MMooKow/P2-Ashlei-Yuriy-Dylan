@@ -1,7 +1,10 @@
-using API.Entities;
+using System;
+using Infrastructure.Data;
+using Core.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 
-namespace API.Data
+namespace Infrastructure.Data.Migrations
 {
     public class StoreContext : DbContext 
     {
