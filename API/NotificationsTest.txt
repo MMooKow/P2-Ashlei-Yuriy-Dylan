@@ -1,1 +1,0 @@
-﻿Notifications test for Discords webhook setup with Github
