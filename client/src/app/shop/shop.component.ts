@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IBrand } from '../models/brand';
 import { IProduct } from '../models/product';
 import { IType } from '../models/productType';
+import { ShopParams } from '../models/shopParams';
 import { ShopService } from './shop.service';
 
 @Component({
@@ -10,11 +11,16 @@ import { ShopService } from './shop.service';
   styleUrls: ['./shop.component.css']
 })
 export class ShopComponent implements OnInit {
-  products?: IProduct[];
-  brands?: IBrand[];
-  types?: IType[];
-  brandIdSelected?: number;
-  typeIdSelected?: number;
+  products: IProduct[];
+  brands: IBrand[];
+  types: IType[];
+  shopParams = new ShopParams();
+  totalCount: number;
+  sortOptions = [
+    {name: 'Alphabetical', value: 'name'},
+    {name: 'Price Up', value: 'priceAsc'},
+    {name: 'Price Down', value: 'priceDesc'},
+  ];
 
   constructor(private shopService: ShopService) { }
 
@@ -24,8 +30,11 @@ export class ShopComponent implements OnInit {
     this.getTypes();
   }
   getProducts(){
-    this.shopService.getProducts(this.brandIdSelected, this.typeIdSelected).subscribe(response => {
+    this.shopService.getProducts(this.shopParams).subscribe(response => {
       this.products = response?.data;
+      this.shopParams.pageNumber = response.pageIndex;
+      this.shopParams.pageSize = response.pageSize;
+      this.totalCount = response.count; 
     }, error => {
       console.log(error);
     });
@@ -45,11 +54,19 @@ export class ShopComponent implements OnInit {
     });
   }
   onBrandSelected(brandId: number){
-    this.brandIdSelected = brandId;
+    this.shopParams.brandId = brandId;
     this.getProducts();
   }
   onTypeSelected(typeId: number){
-    this.typeIdSelected = typeId;
+    this.shopParams.typeId = typeId;
+    this.getProducts();
+  }
+  onSortSelected(sort: string) {
+    this.shopParams.sort = sort;
+    this.getProducts();
+  }
+  onPageChanged(event: any){
+    this.shopParams.pageNumber = event;
     this.getProducts();
   }
 

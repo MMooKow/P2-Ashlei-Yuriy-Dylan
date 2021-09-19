@@ -1,0 +1,14 @@
+<header>
+    <span *ngIf="totalCount && totalCount > 0" >Displaying
+        <strong>
+            {{(pageNumber-1) * pageSize+1}} -
+            {{pageNumber*pageSize 
+                > this.totalCount 
+                ? this.totalCount :  pageNumber * pageSize
+            }}
+
+        </strong> out of <strong>{{this.totalCount}}</strong> Results</span>
+    <span *ngIf="totalCount === 0">
+        There are no results to display. Please go back to our inventory.
+    </span>
+</header>
