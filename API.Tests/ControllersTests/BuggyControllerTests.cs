@@ -36,7 +36,7 @@ namespace API.Tests.ControllersTests
             using (var mock = AutoMock.GetLoose())
             {
                 mock.Mock<StoreContext>()
-                    .Setup(x => x.Products.Find(42))
+                    .Setup(x => x.Products.Find(42));
                     
             
             }
