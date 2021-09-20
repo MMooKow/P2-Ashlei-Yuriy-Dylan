@@ -19,8 +19,8 @@ on: push
 env:
   AZURE_WEBAPP_NAME: Microsoft.Web-WebApp-Portal-49545b9b-b77e    # set this to your application's name
   AZURE_WEBAPP_PACKAGE_PATH: 'https://portal.azure.com/#blade/HubsExtension/DeploymentDetailsBlade/overview/id/%2Fsubscriptions%2Fafacb393-95b5-4f9c-9b45-b8fc61813cf4%2FresourceGroups%2FGroup4-P2%2Fproviders%2FMicrosoft.Resources%2Fdeployments%2FMicrosoft.Web-WebApp-Portal-49545b9b-b77e/packageId/Microsoft.WebSite/packageIconUri/https%3A%2F%2Fcatalogartifact.azureedge.net%2Fpublicartifacts%2FMicrosoft.WebSite-2.6.6%2FMedium.png/primaryResourceId/%2Fsubscriptions%2Fafacb393-95b5-4f9c-9b45-b8fc61813cf4%2Fresourcegroups%2FGroup4-P2%2Fproviders%2FMicrosoft.Web%2Fsites%2FChariots/provisioningHash/customize-post-provisioning-steps-webapp-deployment/createBlade/%7B"bladeName"%3A"AppServiceWebAppCreateV3Blade"%2C"extension"%3A"WebsitesExtension"%7D'      # set this to the path to your web app project, defaults to the repository root
-  NODE_VERSION: '14.x'                # set this to the node version to use
-
+  NODE_VERSION: '14.x'  # set this to the node version to use
+  
 jobs:
   build-and-deploy:
     name: Build and Deploy
@@ -39,9 +39,11 @@ jobs:
         npm install
         npm run build --if-present
         npm run test --if-present
+      
     - name: 'Deploy to Azure WebApp'
       uses: azure/webapps-deploy@v2
       with:
         app-name: ${{ env.AZURE_WEBAPP_NAME }}
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
         package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+        workingDirectory: client
