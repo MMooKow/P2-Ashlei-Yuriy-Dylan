@@ -1,1 +1,22 @@
-<p>product-details works!</p>
+<div class="row" *ngIf="product">
+    <h2>{{product.name}}</h2>
+    <div class="col-6">
+        <img src="{{product.pictureUrl}}" alt="{{product.name}}" class="img-fluid w-100">
+    </div>
+    <div class="col-6">
+        <h3>{{product.name}}</h3>
+        <p>{{product.price | currency}}</p>
+        <div>
+            <button class="btn-outline-secondary btn-lg">Purchase</button>
+            <button class="btn-outline-secondary btn-lg">Pre-Approval</button>
+            <button class="btn-outline-secondary btn-lg" href="https://www.travelers.com">Insurance</button>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-12 ml-3">
+            <h4>Description</h4>
+            <p>{{product.description}}</p>
+        </div>
+    </div>
+</div>
+
