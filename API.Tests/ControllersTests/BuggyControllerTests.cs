@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using API.Controllers;
+using API.Errors;
+using Autofac.Extras.Moq;
+using Infrastructure.Data.Migrations;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using Xunit;
@@ -12,11 +15,32 @@ namespace API.Tests.ControllersTests
 {
     public class BuggyControllerTests
     {
+        /// <summary>
+        /// Simple test to make sure the secret string is returned
+        /// </summary>
+        /// <returns></returns>
         [Fact]
-        public ActionResult<string> GetSecretText_ValidCall()
+        public ActionResult<string> GetSecretText_ReturnsSecretString()
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Test to make sure GetNotFoundRequest works
+        /// </summary>
+        /// <returns></returns>
+        [Fact]
+        public ActionResult GetNotFoundRequest_ValidCall()
+        {
+            /// Using GetLoose to make sure this method is called. Don't currently need GetStrict
+            using (var mock = AutoMock.GetLoose())
+            {
+                mock.Mock<StoreContext>()
+                    .Setup(x => x.Products.Find(42))
+                    
+            
+            }
+            throw new NotImplementedException();
+        }
     }
 }
