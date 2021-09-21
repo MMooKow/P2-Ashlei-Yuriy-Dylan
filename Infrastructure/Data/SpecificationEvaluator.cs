@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using Core.Entities;
 using Core.Specifications;
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
 
 namespace Infrastructure.Data
 {
