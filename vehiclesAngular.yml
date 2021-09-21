@@ -6,6 +6,14 @@
 trigger:
 - main
 
+pr:
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - client
+
 variables:
   directPath: client
 
@@ -29,3 +37,22 @@ steps:
 - script: npx ng test --browsers ChromeHeadless --watch false
   displayName: ng test
   workingDirectory: $(directPath)
+
+- task: SonarCloudPrepare@1
+  inputs:
+    SonarCloud: 'Group4_P2_Sonar'
+    organization: '210726-wvu-net-ext'
+    scannerMode: 'CLI'
+    configMode: 'manual'
+    cliProjectKey: '210726-wvu-net-ext_P2-Ashlei-Yuriy-Dylan_Frontend'
+    cliSources: 'client/src'
+    extraProperties: |
+      sonar.javascript.lcov.reportPaths=$(appDir)/coverage/$(appDir)/lcov.info
+      sonar.coverage.exclusions=**/*.spec.ts
+- task: SonarCloudAnalyze@1
+  displayName: sonar run analysis
+
+- task: SonarCloudPublish@1
+  displayName: sonar publish analysis result
+  inputs:
+    pollingTimeoutSec: '300'
