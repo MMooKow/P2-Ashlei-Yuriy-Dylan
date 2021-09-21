@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PreApprovalComponent } from './pre-approval.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -9,7 +10,9 @@ import { PreApprovalComponent } from './pre-approval.component';
     PreApprovalComponent
   ],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+    SharedModule
+  ],
+  exports: [PreApprovalComponent]
 })
 export class PreApprovalModule { }
