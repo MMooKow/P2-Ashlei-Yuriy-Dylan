@@ -47,7 +47,7 @@ steps:
     cliProjectKey: '210726-wvu-net-ext_P2-Ashlei-Yuriy-Dylan_Frontend'
     cliSources: 'client/src'
     extraProperties: |
-      sonar.javascript.lcov.reportPaths=$(appDir)/coverage/$(appDir)/lcov.info
+      sonar.javascript.lcov.reportPaths=client/coverage/client/lcov.info
       sonar.coverage.exclusions=**/*.spec.ts
 - task: SonarCloudAnalyze@1
   displayName: sonar run analysis
