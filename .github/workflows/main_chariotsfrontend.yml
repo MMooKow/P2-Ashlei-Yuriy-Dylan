@@ -37,7 +37,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: node-app
-          path: dist/client
+          path: client
 
   deploy:
     runs-on: ubuntu-latest
@@ -51,7 +51,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: node-app
-          path: dist/client
+          path: client
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
