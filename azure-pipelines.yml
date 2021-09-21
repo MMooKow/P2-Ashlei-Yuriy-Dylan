@@ -46,7 +46,7 @@ stages:
         SonarCloud: 'Group4_P2_Sonar'
         organization: '210726-wvu-net-ext'
         scannerMode: 'MSBuild'
-        projectKey: '210726-wvu-net-ext_P2-Ashlei-Yuriy-Dylan'
+        projectKey: '210726-wvu-net-ext_P2-Ashlei-Yuriy-Dylan_Backend'
         extraProperties: |
           sonar.exclusions=**/lib/**/*
           sonar.cs.opencover.reportsPaths=$(Agent.TempDirectory)/*/coverage.opencover.xml
