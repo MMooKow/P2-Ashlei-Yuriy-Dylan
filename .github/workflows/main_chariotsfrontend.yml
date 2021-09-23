@@ -6,7 +6,7 @@ name: Build and deploy Node.js app to Azure Web App - ChariotsFrontend
 on:
   push:
     branches:
-      - master
+      - main
     paths:
       - '.github/workflows/main_chariotsfrontend.yml'
       - 'client/**'
