@@ -1,22 +1,26 @@
-import { TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
-
+import { TestBed, waitForAsync } from '@angular/core/testing';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ErrorInterceptor } from './error.interceptor';
 
 describe('ErrorInterceptor', () => {
-  beforeEach(() => TestBed.configureTestingModule({
+  let httpMock: HttpTestingController;
+
+  beforeEach(waitForAsync(() => TestBed.configureTestingModule({
     imports: [
-      RouterTestingModule,
-      HttpClientTestingModule 
+      HttpClientTestingModule
     ],
     providers: [
-      ErrorInterceptor
+      {
+        provide: HTTP_INTERCEPTORS,
+        useClass: ErrorInterceptor,
+        multi: true,
+      }
       ]
-  }));
+  })));
 
   it('should be created', () => {
-    const interceptor: ErrorInterceptor = TestBed.inject(ErrorInterceptor);
-    expect(interceptor).toBeTruthy();
+    httpMock = TestBed.inject(HttpTestingController);
+    expect(httpMock).toBeTruthy();
   });
 });

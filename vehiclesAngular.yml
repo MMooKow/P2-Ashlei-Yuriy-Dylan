@@ -34,7 +34,7 @@ steps:
   displayName: ng build
   workingDirectory: $(directPath)
 
-- script: npx ng test --browsers ChromeHeadless --watch false
+- script: npx ng test --browsers ChromeHeadless --watch false --code-coverage
   displayName: ng test
   workingDirectory: $(directPath)
 

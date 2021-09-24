@@ -28,10 +28,10 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('Vehicles.com');
   });
 
-  it('should render title', () => {
+  it('should render login', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('client app is running!');
+    expect(compiled.querySelector('body')?.textContent).withContext('Login');
   });
 });
