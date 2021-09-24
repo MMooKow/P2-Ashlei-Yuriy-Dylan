@@ -4,16 +4,16 @@
 name: Build and deploy ASP.Net Core app to Azure Web App - ChariotsBackend
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - '.github/workflows/main_chariotsbackend.yml'
-      - 'API/**'
-      - 'Core/**'
-      - 'Infrastructure/**'
-      - 'API.Tests/**'
-      - 'P2-Ashlei-Yuriy-Dylan.sln'
+#  push:
+#    branches:
+#      - main
+#    paths:
+#      - '.github/workflows/main_chariotsbackend.yml'
+#      - 'API/**'
+#      - 'Core/**'
+#      - 'Infrastructure/**'
+#      - 'API.Tests/**'
+#      - 'P2-Ashlei-Yuriy-Dylan.sln'
       
   workflow_dispatch:
 
