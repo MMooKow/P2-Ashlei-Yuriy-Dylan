@@ -2,10 +2,10 @@ import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
-import { ShopService } from './shop.service';
+import { ShoppingCartService } from './shopping-cart.service';
 
-describe('ShopService', () => {
-  let service: ShopService;
+describe('ShoppingCartService', () => {
+  let service: ShoppingCartService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -13,7 +13,7 @@ describe('ShopService', () => {
         RouterTestingModule,
         HttpClientTestingModule 
       ]});
-    service = TestBed.inject(ShopService);
+    service = TestBed.inject(ShoppingCartService);
   });
 
   it('should be created', () => {

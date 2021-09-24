@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IShoppingCart } from '../models/shoppingCart';
-import { ShoppingCartService } from '../shopping-cart/shopping-cart.service';
+import { ShoppingCartService } from './shopping-cart.service';
 
 @Component({
-  selector: 'app-nav-bar',
-  templateUrl: './nav-bar.component.html',
-  styleUrls: ['./nav-bar.component.css']
+  selector: 'app-shopping-cart',
+  templateUrl: './shopping-cart.component.html',
+  styleUrls: ['./shopping-cart.component.css']
 })
-export class NavBarComponent implements OnInit {
+export class ShoppingCartComponent implements OnInit {
   shoppingCart$: Observable<IShoppingCart>;
 
   constructor(private shoppingCartService: ShoppingCartService) { }

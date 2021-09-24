@@ -10,10 +10,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { ErrorInterceptor } from './core/interceptors/error.interceptor';
 import { RouterModule, Routes } from '@angular/router';
 
-
 @NgModule({
   declarations: [
-    AppComponent, HttpClientModule, RouterModule
+    AppComponent,
   ],
   imports: [
     BrowserModule,
