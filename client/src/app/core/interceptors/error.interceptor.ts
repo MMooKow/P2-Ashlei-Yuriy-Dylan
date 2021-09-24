@@ -9,7 +9,7 @@ import { Observable, throwError } from 'rxjs';
 import { NavigationExtras, Router } from '@angular/router';
 import { catchError } from 'rxjs/internal/operators/catchError';
 import { ToastrService } from 'ngx-toastr';
-
+import { NgModuleResolver } from '@angular/compiler';
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
 
