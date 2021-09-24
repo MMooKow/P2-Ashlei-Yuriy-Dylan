@@ -7,6 +7,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'client/**'
   workflow_dispatch:
 
 jobs:
@@ -52,5 +54,5 @@ jobs:
         with:
           app-name: 'VehiclesDAY'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_94FC2A4DF27047C08A4BAC1E87EE8F77 }}
-          package: .
+          publish-profile: $
+          package: ./dist/P2-Ashlei-Yuriy-Dylan
