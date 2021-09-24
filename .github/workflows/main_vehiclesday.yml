@@ -4,11 +4,6 @@
 name: vehiclesday - Build and deploy Node.js app to Azure Web App
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'client/**'
   workflow_dispatch:
 
 jobs:
@@ -16,10 +11,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@main
 
       - name: Set up Node.js version
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@main
         with:
           node-version: '12.x'
 
@@ -28,8 +23,7 @@ jobs:
           npm install
           npm run build --if-present
           npm run test --if-present
-        with:
-          path: ./client
+        working-directory: client
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
@@ -57,4 +51,4 @@ jobs:
           app-name: 'VehiclesDAY'
           slot-name: 'Production'
           publish-profile: $
-          package: ./dist/P2-Ashlei-Yuriy-Dylan/client/
+          package: ./dist/P2-Ashlei-Yuriy-Dylan/
