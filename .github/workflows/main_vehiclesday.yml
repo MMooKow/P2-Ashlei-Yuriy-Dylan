@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy Node.js app to Azure Web App - VehiclesDAY
+name: vehiclesday - Build and deploy Node.js app to Azure Web App
 
 on:
   push:
@@ -55,4 +55,4 @@ jobs:
           app-name: 'VehiclesDAY'
           slot-name: 'Production'
           publish-profile: $
-          package: ./dist/P2-Ashlei-Yuriy-Dylan
+          package: ./dist/P2-Ashlei-Yuriy-Dylan/client/
