@@ -43,6 +43,43 @@ export class ShoppingCartService {
     shoppingCart.items = this.addOrUpdateItem(shoppingCart.items, itemToAdd, quantity);
     this.setShoppingCart(shoppingCart);
   }
+  incrementItemQuantity (item: IShoppingCartItem){
+    const shoppingCart = this.getCurrentShoppingCartValue();
+    const foundItemIndex = shoppingCart.items.findIndex(x => x.id === item.id);
+    shoppingCart.items[foundItemIndex].quantity++;
+    this.setShoppingCart(shoppingCart);
+
+  }
+  decrementItemQuantity (item: IShoppingCartItem){
+    const shoppingCart = this.getCurrentShoppingCartValue();
+    const foundItemIndex = shoppingCart.items.findIndex(x => x.id === item.id);
+    if (shoppingCart.items[foundItemIndex].quantity > 1) {
+      shoppingCart.items[foundItemIndex].quantity--;
+      this.setShoppingCart(shoppingCart);
+    } else{
+      this.removeItemFromShoppingCart(item);
+    }
+  }
+  removeItemFromShoppingCart(item: IShoppingCartItem) {
+    const shoppingCart = this.getCurrentShoppingCartValue();
+    if (shoppingCart.items.some(x => x.id === item.id)) {
+      shoppingCart.items = shoppingCart.items.filter(i => i.id !== item.id);
+      if (shoppingCart.items.length > 0) {
+        this.setShoppingCart(shoppingCart);
+      } else {
+        this.deleteShoppingCart(shoppingCart);
+      }
+    }
+  }
+  deleteShoppingCart(shoppingCart: IShoppingCart) {
+    return this.http.delete(this.baseUrl + 'shoppingCart?id=' + shoppingCart.id).subscribe(() => {
+      this.shoppingCartSource.next(null);
+      this.shoppingCartTotalSource.next(null);
+      localStorage.removeItem('shoppingCart_id');
+    }, error => {
+      console.log(error);
+    });
+  }
   private calculateTotals(){
     const shoppingCart = this.getCurrentShoppingCartValue();
     const delivery = 750;
