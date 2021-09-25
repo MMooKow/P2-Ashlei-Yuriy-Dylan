@@ -4,12 +4,12 @@
 name: Build and deploy Node.js app to Azure Web App - ChariotsFrontend
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - '.github/workflows/main_chariotsfrontend.yml'
-      - 'client/**'
+#  push:
+#    branches:
+#      - main
+#    paths:
+#      - '.github/workflows/main_chariotsfrontend.yml'
+#      - 'client/**'
   workflow_dispatch:
 
 jobs:
@@ -29,7 +29,6 @@ jobs:
           cd client
           npm ci
           npm run build --if-present
-      
 
   deploy:
     runs-on: ubuntu-latest
