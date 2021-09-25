@@ -10,11 +10,15 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace API.Extensions
 {
+    /// <summary>
+    /// To split StartUp and keep it a bit more organized 
+    /// </summary>
     public static class ApplicationServicesExtensions
     {
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {
             services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IShoppingCartRepository, ShoppingCartRepository>();
             services.AddScoped(typeof(IGenericRepository<>), (typeof(GenericRepository<>)));
             services.Configure<ApiBehaviorOptions>(options =>
             {
