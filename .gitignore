@@ -5,6 +5,7 @@
 appsettings.json
 appsettings.Development.json
 .vscode/
+packages
 # User-specific files
 *.rsuser
 *.suo
