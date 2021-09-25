@@ -45,4 +45,3 @@ jobs:
           app-name: 'ChariotsFrontend'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E93C407F96934A92BB45A51856FE4DED }}
-          package: 'client/dist/client'
