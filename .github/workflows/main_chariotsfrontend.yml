@@ -4,12 +4,12 @@
 name: Build and deploy Node.js app to Azure Web App - ChariotsFrontend
 
 on:
-#  push:
-#    branches:
-#      - main
-#    paths:
-#      - '.github/workflows/main_chariotsfrontend.yml'
-#      - 'client/**'
+  push:
+    branches:
+      - master
+    paths:
+      - '.github/workflows/main_chariotsfrontend.yml'
+      - 'client/**'
   workflow_dispatch:
 
 jobs:
@@ -42,6 +42,7 @@ jobs:
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
         with:
-          app-name: 'ChariotsFrontend'
+          app-name: 'chariots-front'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E93C407F96934A92BB45A51856FE4DED }}
+          package: 'client/dist'
