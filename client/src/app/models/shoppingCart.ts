@@ -19,3 +19,9 @@ export class ShoppingCart implements IShoppingCart {
     items: IShoppingCartItem[] = [];
 }
 
+export interface IShoppingCartTotals {
+    delivery: number;
+    subtotal: number;
+    tax: number;
+    total: number;
+}
