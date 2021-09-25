@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IShoppingCart } from '../models/shoppingCart';
+import { IShoppingCart, IShoppingCartItem } from '../models/shoppingCart';
 import { ShoppingCartService } from './shopping-cart.service';
 
 @Component({
@@ -15,6 +15,18 @@ export class ShoppingCartComponent implements OnInit {
 
   ngOnInit(): void {
     this.shoppingCart$ = this.shoppingCartService.shoppingCart$;
+  }
+  
+  removeShoppingCartItem(item: IShoppingCartItem){
+    this.shoppingCartService.removeItemFromShoppingCart(item);
+  }
+
+  decrementItemQuantity(item: IShoppingCartItem){
+    this.shoppingCartService.decrementItemQuantity(item);
+  }
+
+  incrementItemQuantity(item: IShoppingCartItem){
+    this.shoppingCartService.incrementItemQuantity(item);
   }
 
 }
