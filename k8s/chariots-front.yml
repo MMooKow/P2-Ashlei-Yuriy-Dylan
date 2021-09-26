@@ -1,0 +1,60 @@
+##Give network access to pods
+apiVersion: v1
+kind: Service
+metadata:
+  name: chariots-front
+  labels:
+    app: chariots-front
+    role: ui
+spec:
+  type: NodePort
+  selector:
+    app: chariots-front
+    role: ui
+  ports:
+  - port: 80
+    nodePort: 30000
+---
+## Controlls pods
+apiVersion: apps/v1 
+kind: Deployment 
+metadata: 
+  name: chariots-front
+  labels: 
+    app: chariots-front
+    role: ui
+spec: 
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+  minReadySeconds: 5
+  selector: 
+    matchLabels:
+      app: chariots-front
+      role: ui
+  template: 
+    metadata:
+      labels:
+        app: chariots-front
+        role: ui
+    spec: 
+      containers: 
+      - name: ui
+        image: mmookow/chariotsfront:2.0
+        imagePullPolicy: Always 
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            memory: '64Mi'
+            cpu: '100m'
+          limits:
+            memory: '512Mi'
+            cpu: '1000m'
+        livenessProbe:
+          httpGet:
+            port: 80
+            path: /health
+          periodSeconds: 30

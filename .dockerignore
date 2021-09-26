@@ -1,0 +1,8 @@
+**./github
+**/obj
+**/publish
+**/.vscode
+**/.vs
+**./gitattributes
+**./API.Tests
+**/client

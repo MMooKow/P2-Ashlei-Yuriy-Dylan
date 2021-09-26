@@ -1,0 +1,6 @@
+**./github
+**/.vscode
+**/.vs
+**./gitattributes
+**/node_modules
+**/ssl
