@@ -3,8 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: true,
-  apiUrl: 'https://chariotsbackend.azurewebsites.net/'
+  production: false,
+  apiUrl: 'https://chariotsbackend.azurewebsites.net/api/'
 };
 
 /*
