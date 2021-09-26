@@ -1,0 +1,7 @@
+{
+    "/api/*": {
+        "target": "https://chariotsbackend.azurewebsites.net/api/",
+        "secure": false,
+        "logLevel": "debug"
+    }
+}
