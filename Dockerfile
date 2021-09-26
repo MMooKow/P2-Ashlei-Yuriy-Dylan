@@ -4,26 +4,28 @@
 # 3. docker run --rm -it consolecontainerwithbuild:1.0
 
 ############ V2 ####################
-# First build
-        FROM  mcr.microsoft.com/dotnet/sdk:5.0
-        WORKDIR /app
+# Run sdk things
+        FROM  mcr.microsoft.com/dotnet/sdk:5.0 AS build
+        WORKDIR /app/src
+        
+        # Copy everything to root of Docker image
+        COPY API/*.csproj API/
+        COPY API.Tests/*.csproj API.Tests/
+        COPY Core/*.csproj Core/
+        COPY Infrastructure/*.csproj Infrastructure/
+        COPY *.sln ./
+        RUN dotnet restore
 
-        # copy everything to root of docker image
         COPY . ./
+        RUN dotnet publish --configuration Release --no-restore -o ../publish
 
-        # steps below this refactored to be a bit faster
-        RUN dotnet publish -o publish
-
-        CMD [ "dotnet", "publish/API.dll" ]
-
+# Run runtime things
         FROM  mcr.microsoft.com/dotnet/aspnet:5.0
+        WORKDIR /app
+        COPY --from=build /app/publish ./
+        # copy everything to root of docker image
         ENV ASPNETCORE_URLS=http://+:80  
         EXPOSE 80
         ENV ConnectionStrings__MySqlDb "DbConnection": "Server=tcp:rev-yyarytskyy.database.windows.net,1433;Initial Catalog=p2db;Persist Security Info=False;User ID=petadmin;Password=R@spberryPi4;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
-        WORKDIR /app
-# Second build
-        # copy everything to root of docker image
-        COPY . ./
-
-        # steps below this refactored to be a bit faster
+        ENV ConnectionStrings_LocalDb "localhost"
         CMD [ "dotnet", "API.dll" ]
