@@ -13,7 +13,7 @@ spec:
     role: ui
   ports:
   - port: 80
-    nodePort: 30500
+    nodePort: 30000
 ---
 ## Controlls pods
 apiVersion: apps/v1 
@@ -42,7 +42,7 @@ spec:
     spec: 
       containers: 
       - name: ui
-        image: nicholasescalona/email-app-ui:localhost30000
+        image: mmookow/chariotsfront:2.0
         imagePullPolicy: Always 
         ports:
         - containerPort: 80

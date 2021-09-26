@@ -12,7 +12,7 @@ spec:
     role: api
   ports:
   - port: 80
-    nodePort: 30000
+    nodePort: 30005
 ---
 apiVersion: apps/v1 
 kind: Deployment
@@ -40,7 +40,7 @@ spec:
     spec: 
       containers: 
       - name: api
-        image: nicholasescalona/emailapp:1.0
+        image: mmookow/chariotsback:2.0
         imagePullPolicy: Always 
         ports:
         - containerPort: 80
